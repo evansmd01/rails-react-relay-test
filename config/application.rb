@@ -25,8 +25,10 @@ module RailsReactRelayTest
 
 
     #GraphQL autoload types from app/graph/types
-
     config.autoload_paths << Rails.root.join('app', 'graph', 'types')
+
+    #Browserify for ES6 using babel
+    config.browserify_rails.commandline_options = "-t babelify"
 
   end
 end

@@ -49,3 +49,5 @@ end
 gem 'graphql'
 gem 'graphiql-rails'
 
+gem 'browserify-rails'
+
