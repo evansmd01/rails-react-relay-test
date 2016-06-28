@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
 
   def index
-    @message = "hello world"
+    @json_view_model = {
+        message: "Hello World!!!"
+    }
   end
 end

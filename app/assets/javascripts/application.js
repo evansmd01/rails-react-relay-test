@@ -1,15 +1,14 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
+var React = require('react');
+var ReactDOM = require('react-dom');
 
+//todo: dynamically generate the view tree
+var views = {};
+views.home = {};
+views.home.index = require("./views/home/index.js");
 
-require('./main');
+window.App = {
+  renderView: function(controller, action, model, target){
+    var View = views[controller][action].default;
+    ReactDOM.render(<View {...model}/>, target);
+  }
+};

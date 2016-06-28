@@ -8,7 +8,18 @@
 </head>
 <body>
 
-<%= yield %>
+  <%= yield %>
+  <div id="react-view-target"></div>
+
+  <script>
+    var controller_name = '<%= controller_name %>';
+    var action_name = '<%= action_name %>';
+    var json_view_model = <%= raw @json_view_model.to_json %>;
+
+    window.onload = function(){
+      App.renderView(controller_name, action_name, json_view_model, document.getElementById("react-view-target"));
+    };
+  </script>
 
 </body>
 </html>
