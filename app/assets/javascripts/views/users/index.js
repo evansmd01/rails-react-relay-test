@@ -1,11 +1,11 @@
 import React from "react"
 
-var View = React.createClass({
-  render: function(){
+class View extends React.Component {
+  render() {
     return (
-        <p>hello user</p>
+        <p>Hey {this.props.user}, I'm the react users#index view</p>
     )
   }
-});
+}
 
 export default View;
