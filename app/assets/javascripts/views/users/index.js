@@ -3,7 +3,7 @@ import React from "react"
 var View = React.createClass({
   render: function(){
     return (
-        <p>{this.props.message} :)</p>
+        <p>hello user</p>
     )
   }
 });
